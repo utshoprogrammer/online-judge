@@ -16,6 +16,7 @@ int main()
         {
             cin >> v[i];
         }
+        int ans = 0;
         for (int i = 0; i < n; i++)
         {
             for (int j = 1; j < n; j++)
@@ -23,15 +24,12 @@ int main()
                 if(abs(v[j-1] - v[j]) > 1 && v[j-1] > v[j])
                 {
                     swap(v[j-1],v[j]);
+                    ans+=2;
                 }
             }   
         } 
-              
-        for (auto val : v)
-        {
-            cout << val << " ";
-        }
-        cout << endl;
+            
+        cout << ans << endl;
     }
 
     return 0;
