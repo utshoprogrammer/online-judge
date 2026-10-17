@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    long long int t; cin >> t;
+    while (t--)
+    {
+        long long int a,b; cin >> a >> b;
+        if(a < b)
+        {
+            cout << ceil(b/a) << endl;
+        }
+        else{
+            cout << 0 << endl;
+        }
+    }
+
+    return 0;
+}
