@@ -13,15 +13,14 @@ int main()
         for (int i = 1; i <= n; i++)
         {
             if(i%2 == 0) even.push_back(i);
-            else odd.push_back(i);
+            else  odd.push_back(i);
         }
-        reverse(even.begin(),even.end());
         reverse(odd.begin(),odd.end());
-        for (auto val : even)
+        for (auto val : odd)
         {
             cout << val <<" ";
         }
-        for (auto val : odd)
+        for (auto val : even)
         {
             cout << val <<" ";
         }

@@ -14,24 +14,36 @@ int main()
         {
             cin >> v[i];
         }
-        vector<int> pre(n+1);
-        pre[0] = v[0];
-        for (int i = 1; i < n; i++)
-        {
-            pre[i] = pre[i-1] + v[i];
-        }
-        int count = 0;
+        int sum = 0,mn = 0,min_indx = -1;
         for (int i = 0; i < n; i++)
         {
-            if(pre[i] < 0)
+            sum += v[i];
+            if(mn > v[i])
             {
-                count++;
+                mn = v[i];
+                min_indx = i;
             }
-            // cout << pre[i] << " ";
+            if(sum < 0)
+            {
+                break;
+            }
         }
-        // cout << endl;
-
-        if(count <= 1) cout << "YES" << endl;
+        sum = 0;
+        bool flag = true;
+        for (int i = 0; i < n; i++)
+        {
+            if(i == min_indx)
+            {
+                continue;
+            }
+            sum += v[i];
+            if(sum < 0)
+            {
+                flag = false;
+                break;
+            }
+        }
+        if(flag) cout << "YES" << endl;
         else cout << "NO" << endl;
         
     }
