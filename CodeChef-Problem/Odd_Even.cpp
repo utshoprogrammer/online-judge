@@ -22,7 +22,20 @@ int main()
             else
                 odd++;
         }
-        
+        int ans = 0;
+        if (even == odd)
+        {
+            ans = even + odd;
+        }
+        else if (even > odd)
+        {
+            ans = 2 * odd + 1;
+        }
+        else if (odd > even)
+        {
+            ans = 2 * even + 1;
+        }
+        cout << ans << endl;
     }
     return 0;
 }

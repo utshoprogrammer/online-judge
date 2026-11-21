@@ -9,21 +9,30 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        map<int,int> mp;
-        for (int i = 0; i < n; i++)
+        int gpu,y;
+        cin >> gpu>> y;
+
+        int ans = 500;
+        for (int g = 1; g <= 201; g++)
         {
-            int x; cin >> x;
-            mp[x]++;
+            int cur_day = 1;
+            int total_cost = gpu * g;
+            int income = 0;
+            while(income <= total_cost)
+            {
+                if(cur_day <= g)
+                {
+                    income += y * (cur_day * cur_day);
+                }
+                else{
+                    income += y *(g*g);
+                }
+                if(income > total_cost) break;
+                 cur_day++;
+            }
+            ans = min(ans,cur_day);
         }
-        int mx = 0;
-        for(auto x : mp)
-        {
-            mx = max(mx,x.second);
-        }
-        cout << (mx+1)/2  << endl;
-        
+        cout << ans << endl;    
     }
 
     return 0;

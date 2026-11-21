@@ -26,7 +26,7 @@ int main()
             vector<int> b;
             for (int i = 0; i < v.size(); i++)
             {
-                if (v[i] * v.size() < sum) // মানে: v[i] < sum/v.size() (average)
+                if (v[i] * v.size() < sum)          // মানে: v[i] < sum/v.size() (average)
                 {
                     remining--;
                 }

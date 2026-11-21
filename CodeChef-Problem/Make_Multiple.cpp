@@ -16,9 +16,11 @@ int main()
         {
             cout<< 1 << endl;
         }
-        else if(n+5%3 ==0)
+        else 
         {
-            cout << 2 << endl;
+            int next = n/5 * 5 + 5;
+            if(next % 3 == 0) cout << 1 << endl;
+            else cout << 2 << endl;
         }
 
     }
